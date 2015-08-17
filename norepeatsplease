@@ -1,0 +1,58 @@
+function permute(A) {
+
+var res = [];
+
+
+function generate(n,A) {
+
+
+        function swap(arr,i1,i2) {
+            temp = arr[i1];
+            arr[i1] = arr[i2];
+            arr[i2] = temp;
+
+        }
+
+        if(n===1) {
+            res.push(A.slice(0));
+        } else {
+            for(var i = 0; i < n - 1; i++) {
+                generate(n - 1, A);
+                if(n%2 === 0) {
+                    swap(A,i,n-1);
+                } else {
+                    swap(A,0,n-1);
+                }
+            }
+            generate(n-1,A);
+        }
+        return res;
+    }
+    return generate(A.length,A);
+}
+
+function doubleLetter(arr) {
+    var str = arr.join('');
+    if(str.match(/(.)\1/) !== null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function permAlone(str) {
+    arr = str.split('');
+    permuted = permute(arr);
+    var total = 0;
+    for(var i = 0; i < permuted.length; i++) {
+
+        if(doubleLetter(permuted[i]) === false) {
+            total += 1;
+        }
+    }
+    return total;
+
+
+}
+
+permAlone('aab');

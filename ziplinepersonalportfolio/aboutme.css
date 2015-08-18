@@ -1,0 +1,61 @@
+/* Used this blogpost: http://codyhouse.co/gem/alternate-fixed-scroll-backgrounds.
+Colors are from: http://www.color-hex.com/color-palette/9803 */
+
+.link {
+
+}
+.btn-primary {
+  border-color:black;
+}
+.text-primary {
+  color: black !important;
+}
+/* constants */
+
+.cd-fixed-bg {
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.cd-fixed-bg.cd-bg-1 {
+  background-image: url("http://i.imgur.com/XjV8xk1.jpg");
+  margin: 56px -49px 0px -49px;
+}
+
+.cd-fixed-bg.cd-bg-2 {
+  background-image: url("http://i.imgur.com/xUf8wPj.jpg");
+  margin: 0px -49px 0px -49px;
+}
+
+.cd-fixed-bg.cd-bg-3 {
+  background-image: url("http://i.imgur.com/u6D2Z5A.jpg");
+  margin: 0px -49px 0px -49px;
+}
+
+.cd-fixed-bg.cd-bg-4 {
+  background-image: url("http://i.imgur.com/hZ36na1.jpg?1");
+  margin: 0px -49px 0px -49px;
+}
+.up-top {
+  margin-top:0px;
+}
+#header {
+  position: fixed;
+  height: 56px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hide;
+  width: 100%;
+  background-color: #3f7990;
+}
+
+#footer {
+  bottom: 0px;
+  height: 150px;
+  width: 106%;
+  background-color: #f4ad64;
+}

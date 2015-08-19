@@ -1,7 +1,41 @@
+body {
+  background-image:
+  url("http://i.imgur.com/hdJHppR.jpg?1");
+}
+
+#tweet {
+  font-size:20px;
+  font-family:Georgia, Serif;
+}
+
+#title {
+  margin:20px;
+  text-shadow: 1px 2px 3px #666;
+  font-size:30px;
+  font-weight:bold;
+  font-family:Georgia, Serif;
+  color:black;
+}
+#description {
+  font-size:20px;
+  font-family:Georgia, Serif;
+  color:black;
+}
 .btn-primary {
-  margin-left:100px;
+  margin-left:0px;
+  margin-top:10px;
 }
 
 .centered {
   text-align: center;
+}
+
+#Content {
+   font-family:Georgia, Serif;
+  box-shadow: -5px 5px 5px  #888888;
+}
+
+#target {
+   font-family:Georgia, Serif;
+   font-size:25px;
 }

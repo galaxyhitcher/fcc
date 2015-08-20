@@ -1,0 +1,16 @@
+body {
+  background-image:
+  url("https://i.imgur.com/f7sdVF0.jpg");
+}
+
+.target {
+  margin:10px;
+  padding:10px;
+  border-radius:10px;
+  font-color:black;
+  font-weight:bold;
+  font-family:"Courier New";
+  font-size:20px;
+  opacity:0.8;
+  background-color:#87CEFA;
+}

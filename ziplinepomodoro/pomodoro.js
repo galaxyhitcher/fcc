@@ -5,7 +5,10 @@ function countdown() {
     console.log(convert(count));
     count -= 1;
     if(count < 0) {
-        countdownBreak();
+        takebreak = 20;
+        setTimeout(function () {countdownBreak()},1000);
+
+
     } else {
         setTimeout(function() { countdown() },1000);
     }
@@ -15,7 +18,8 @@ function countdownBreak() {
     console.log(convert(takebreak));
     takebreak -= 1;
     if(takebreak < 0) {
-        countdown();
+        count = 30;
+        setTimeout(function() { countdown() },1000);
     } else {
         setTimeout(function() { countdownBreak() },1000);
     }

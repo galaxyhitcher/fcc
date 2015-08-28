@@ -78,9 +78,11 @@ $('document').ready(function() {
   $('#session').append(state.sessionLength);
   $('#main-clock').append(state.clockTime);
   $('#break-minus').click(function() {
-    state.breakLength -= 1;
-    $('#break').empty();
-    $('#break').append(state.breakLength);
+    if(!state.clockTicking) {
+      state.breakLength -= 1;
+      $('#break').empty();
+      $('#break').append(state.breakLength);
+    }
     if(!state.clockTicking && state.breakOnClock) {
       state.clockTime = state.breakLength;
       $('#main-clock').empty();
@@ -88,9 +90,11 @@ $('document').ready(function() {
     }
   });
   $('#break-plus').click(function() {
-    state.breakLength += 1;
-    $('#break').empty();
-    $('#break').append(state.breakLength);
+    if(!state.clockTicking) {
+      state.breakLength += 1;
+      $('#break').empty();
+      $('#break').append(state.breakLength);
+    }
     if(!state.clockTicking && state.breakOnClock) {
       state.clockTime = state.breakLength;
       $('#main-clock').empty();
@@ -98,9 +102,12 @@ $('document').ready(function() {
     }
   });
   $('#session-minus').click(function() {
-    state.sessionLength -= 1;
-    $('#session').empty();
-    $('#session').append(state.sessionLength);
+    if(!state.clockTicking) {
+      state.sessionLength -= 1;
+      $('#session').empty();
+      $('#session').append(state.sessionLength);
+    }
+    
     if(!state.clockTicking && state.sessionOnClock) {
       state.clockTime = state.sessionLength;
       $('#main-clock').empty();
@@ -109,9 +116,11 @@ $('document').ready(function() {
     state.newState = true;
   });
   $('#session-plus').click(function() {
-    state.sessionLength += 1;
-    $('#session').empty();
-    $('#session').append(state.sessionLength);
+    if(!state.clockTicking) {
+      state.sessionLength += 1;
+      $('#session').empty();
+      $('#session').append(state.sessionLength);
+    }
     if(!state.clockTicking && state.sessionOnClock) {
       state.clockTime = state.sessionLength;
       $('#main-clock').empty();

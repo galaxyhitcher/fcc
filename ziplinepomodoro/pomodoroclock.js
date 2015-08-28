@@ -8,6 +8,10 @@ var state = {
   newState:true,
   timer: undefined
 };
+
+function minutesToSeconds(minutes) {
+  return minutes*60;
+}
 function pad(num) {
     num = num.toString();
     while(num.length < 2) {
@@ -63,11 +67,11 @@ function countdown() {
     if(state.sessionOnClock) {
       state.sessionOnClock = false;
       state.breakOnClock = true;
-      state.clockTime = state.breakLength;
+      state.clockTime = state.breakLength*60;
     } else {
       state.sessionOnClock = true;
       state.breakOnClock = false;
-      state.clockTime = state.sessionLength;
+      state.clockTime = state.sessionLength*60;
     }
   }
   timer = setTimeout(function () { countdown()},1000);
@@ -129,8 +133,13 @@ $('document').ready(function() {
     state.newState = true;
   });
   $('#main-clock').click(function() {
+    if((state.clockTime === state.sessionLength) || (state.clockTime === session.breakLength)) {
+      state.clockTime *= 60
+    }
+    
     state.clockTicking = !state.clockTicking;
     if(state.clockTicking) {
+      
       countdown();
     } else {
       clearTimeout(timer);
